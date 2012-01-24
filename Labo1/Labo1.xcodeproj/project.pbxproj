@@ -18,6 +18,7 @@
 		1BDD5DBD14CE31000077ACD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDD5DA414CE31000077ACD3 /* Foundation.framework */; };
 		1BDD5DC514CE31000077ACD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BDD5DC314CE31000077ACD3 /* InfoPlist.strings */; };
 		1BDD5DC814CE31000077ACD3 /* Labo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDD5DC714CE31000077ACD3 /* Labo1Tests.m */; };
+		1BDD5E1414CE3C8E0077ACD3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BDD5E1314CE3C8E0077ACD3 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1BDD5DC414CE31000077ACD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BDD5DC614CE31000077ACD3 /* Labo1Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Labo1Tests.h; sourceTree = "<group>"; };
 		1BDD5DC714CE31000077ACD3 /* Labo1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Labo1Tests.m; sourceTree = "<group>"; };
+		1BDD5E1314CE3C8E0077ACD3 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				1BDD5DB114CE31000077ACD3 /* AppDelegate.h */,
 				1BDD5DB214CE31000077ACD3 /* AppDelegate.m */,
 				1BDD5DA914CE31000077ACD3 /* Supporting Files */,
+				1BDD5E1314CE3C8E0077ACD3 /* MainWindow.xib */,
 			);
 			path = Labo1;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BDD5DAD14CE31000077ACD3 /* InfoPlist.strings in Resources */,
+				1BDD5E1414CE3C8E0077ACD3 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 				1BDD5DCD14CE31000077ACD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BDD5DCE14CE31000077ACD3 /* Build configuration list for PBXNativeTarget "Labo1Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				1BDD5DD014CE31000077ACD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
