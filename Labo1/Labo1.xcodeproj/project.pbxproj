@@ -18,6 +18,7 @@
 		1B7E52A014D76BAB00F562AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7E528714D76BAB00F562AA /* Foundation.framework */; };
 		1B7E52A814D76BAB00F562AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E52A614D76BAB00F562AA /* InfoPlist.strings */; };
 		1B7E52AB14D76BAB00F562AA /* Labo1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E52AA14D76BAB00F562AA /* Labo1Tests.m */; };
+		1B7E52B514D76C0D00F562AA /* AppWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E52B414D76C0D00F562AA /* AppWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1B7E52A714D76BAB00F562AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B7E52A914D76BAB00F562AA /* Labo1Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Labo1Tests.h; sourceTree = "<group>"; };
 		1B7E52AA14D76BAB00F562AA /* Labo1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Labo1Tests.m; sourceTree = "<group>"; };
+		1B7E52B414D76C0D00F562AA /* AppWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				1B7E529414D76BAB00F562AA /* AppDelegate.h */,
 				1B7E529514D76BAB00F562AA /* AppDelegate.m */,
+				1B7E52B414D76C0D00F562AA /* AppWindow.xib */,
 				1B7E528C14D76BAB00F562AA /* Supporting Files */,
 			);
 			path = Labo1;
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B7E529014D76BAB00F562AA /* InfoPlist.strings in Resources */,
+				1B7E52B514D76C0D00F562AA /* AppWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
