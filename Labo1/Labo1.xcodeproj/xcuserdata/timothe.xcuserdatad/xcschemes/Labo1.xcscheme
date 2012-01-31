@@ -13,10 +13,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BDD5D9D14CE31000077ACD3"
-               BuildableName = "Labo1.app"
-               BlueprintName = "Labo1"
-               ReferencedContainer = "container:Labo1.xcodeproj">
+               BlueprintIdentifier = "1B7E523A14D769C800F562AA"
+               BuildableName = "labo1.app"
+               BlueprintName = "labo1"
+               ReferencedContainer = "container:labo1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,20 +31,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BDD5DB814CE31000077ACD3"
-               BuildableName = "Labo1Tests.octest"
-               BlueprintName = "Labo1Tests"
-               ReferencedContainer = "container:Labo1.xcodeproj">
+               BlueprintIdentifier = "1B7E525514D769C800F562AA"
+               BuildableName = "labo1Tests.octest"
+               BlueprintName = "labo1Tests"
+               ReferencedContainer = "container:labo1.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1BDD5D9D14CE31000077ACD3"
-            BuildableName = "Labo1.app"
-            BlueprintName = "Labo1"
-            ReferencedContainer = "container:Labo1.xcodeproj">
+            BlueprintIdentifier = "1B7E523A14D769C800F562AA"
+            BuildableName = "labo1.app"
+            BlueprintName = "labo1"
+            ReferencedContainer = "container:labo1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -59,10 +59,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1BDD5D9D14CE31000077ACD3"
-            BuildableName = "Labo1.app"
-            BlueprintName = "Labo1"
-            ReferencedContainer = "container:Labo1.xcodeproj">
+            BlueprintIdentifier = "1B7E523A14D769C800F562AA"
+            BuildableName = "labo1.app"
+            BlueprintName = "labo1"
+            ReferencedContainer = "container:labo1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,10 +77,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1BDD5D9D14CE31000077ACD3"
-            BuildableName = "Labo1.app"
-            BlueprintName = "Labo1"
-            ReferencedContainer = "container:Labo1.xcodeproj">
+            BlueprintIdentifier = "1B7E523A14D769C800F562AA"
+            BuildableName = "labo1.app"
+            BlueprintName = "labo1"
+            ReferencedContainer = "container:labo1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

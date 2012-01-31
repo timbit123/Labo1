@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  Labo1
+//  labo1
 //
-//  Created by Timothé Fillion Brunet on 12-01-23.
+//  Created by Timothé Fillion Brunet on 12-01-30.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

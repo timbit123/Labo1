@@ -1,14 +1,14 @@
 //
-//  Labo1Tests.m
-//  Labo1Tests
+//  labo1Tests.m
+//  labo1Tests
 //
-//  Created by Timothé Fillion Brunet on 12-01-23.
+//  Created by Timothé Fillion Brunet on 12-01-30.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Labo1Tests.h"
+#import "labo1Tests.h"
 
-@implementation Labo1Tests
+@implementation labo1Tests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in Labo1Tests");
+    STFail(@"Unit tests are not implemented yet in labo1Tests");
 }
 
 @end
