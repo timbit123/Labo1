@@ -296,6 +296,7 @@
 				FA0E944D14D773F6003B0BF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
