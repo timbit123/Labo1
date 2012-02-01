@@ -25,6 +25,8 @@
 		1B80895C14D998DB0055B4A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B80893214D998DA0055B4A5 /* Foundation.framework */; };
 		1B80896414D998DB0055B4A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B80896214D998DB0055B4A5 /* InfoPlist.strings */; };
 		1B80896714D998DB0055B4A5 /* TP1Partie3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B80896614D998DB0055B4A5 /* TP1Partie3Tests.m */; };
+		1BD4D09B14DA065300D2ED05 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4D09A14DA065300D2ED05 /* ThirdViewController.m */; };
+		1BD4D09E14DA06E900D2ED05 /* Athlete.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4D09D14DA06E900D2ED05 /* Athlete.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		1B80896314D998DB0055B4A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B80896514D998DB0055B4A5 /* TP1Partie3Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TP1Partie3Tests.h; sourceTree = "<group>"; };
 		1B80896614D998DB0055B4A5 /* TP1Partie3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TP1Partie3Tests.m; sourceTree = "<group>"; };
+		1BD4D09914DA065300D2ED05 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		1BD4D09A14DA065300D2ED05 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		1BD4D09C14DA06E900D2ED05 /* Athlete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Athlete.h; sourceTree = "<group>"; };
+		1BD4D09D14DA06E900D2ED05 /* Athlete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Athlete.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,10 @@
 				1B80894D14D998DB0055B4A5 /* SecondViewController.m */,
 				1B80894F14D998DB0055B4A5 /* second.png */,
 				1B80895114D998DB0055B4A5 /* second@2x.png */,
+				1BD4D09914DA065300D2ED05 /* ThirdViewController.h */,
+				1BD4D09A14DA065300D2ED05 /* ThirdViewController.m */,
+				1BD4D09C14DA06E900D2ED05 /* Athlete.h */,
+				1BD4D09D14DA06E900D2ED05 /* Athlete.m */,
 				1B80893714D998DA0055B4A5 /* Supporting Files */,
 			);
 			path = TP1Partie3;
@@ -282,6 +292,8 @@
 				1B80894114D998DA0055B4A5 /* AppDelegate.m in Sources */,
 				1B80894714D998DA0055B4A5 /* FirstViewController.m in Sources */,
 				1B80894E14D998DB0055B4A5 /* SecondViewController.m in Sources */,
+				1BD4D09B14DA065300D2ED05 /* ThirdViewController.m in Sources */,
+				1BD4D09E14DA06E900D2ED05 /* Athlete.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +465,7 @@
 				1B80896C14D998DB0055B4A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B80896D14D998DB0055B4A5 /* Build configuration list for PBXNativeTarget "TP1Partie3Tests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +474,7 @@
 				1B80896F14D998DB0055B4A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
