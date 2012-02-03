@@ -10,4 +10,30 @@
 
 @implementation Athlete
 
+@synthesize pays;
+@synthesize prenom;
+@synthesize nom;
+@synthesize position;
+@synthesize numero;
+@synthesize pointage;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+-(id)initWithPrenomNomPaysNumero: (NSString *)pPrenom: (NSString *)pNom: (NSString *)pPays: (int)pNumero{
+    self = [super init];
+    if (self){
+        [self setPrenom:pPrenom];
+        [self setNom:pNom];
+        [self setPays:pPays];
+        [self setNumero:pNumero];
+        
+    }
+    return self;
+}
+
 @end

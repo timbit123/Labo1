@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstViewController : UIViewController
+- (IBAction)addAthlete:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txtPays;
+@property (weak, nonatomic) IBOutlet UITextField *txtNom;
+@property (weak, nonatomic) IBOutlet UITextField *txtPrenom;
 
 @end

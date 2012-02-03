@@ -9,6 +9,10 @@
 #import "FirstViewController.h"
 
 @implementation FirstViewController
+@synthesize txtPays;
+@synthesize txtNom;
+@synthesize txtPrenom;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,6 +30,9 @@
 
 - (void)viewDidUnload
 {
+    [self setTxtPays:nil];
+    [self setTxtNom:nil];
+    [self setTxtPrenom:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -57,4 +64,7 @@
     return YES;
 }
 
+- (IBAction)addAthlete:(id)sender {
+
+}
 @end

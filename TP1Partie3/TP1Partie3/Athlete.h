@@ -9,5 +9,22 @@
 #import <Foundation/Foundation.h>
 
 @interface Athlete : NSObject
+{
+    NSString* pays;
+    NSString* prenom;
+    NSString* nom;
+    int position;
+    int numero;
+    double pointage;
+}
+
+-(id)initWithPrenomNomPaysNumero: (NSString *)pPrenom: (NSString *)pNom: (NSString *)pPays: (int)pNumero;
+
+@property (retain) NSString* pays;
+@property (retain) NSString* prenom;
+@property (retain) NSString* nom;
+@property int position;
+@property int numero;
+@property double pointage;
 
 @end
