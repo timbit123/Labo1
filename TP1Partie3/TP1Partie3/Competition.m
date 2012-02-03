@@ -57,7 +57,7 @@
 
 -(int)nouveauNumeroAthlete
 {
-    /*int unNombre;
+    int unNombre;
     if([lstAthlete count]==0){
         unNombre = (int)arc4random() * 100 + 1;
     } else {
@@ -75,8 +75,9 @@
                 quitte = true;
             }
         }
-    }*/
-    return 1;
+    }
+    
+    return unNombre;
 }
 
 @end
