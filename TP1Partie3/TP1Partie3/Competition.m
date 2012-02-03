@@ -10,28 +10,21 @@
 
 @implementation Competition
 
-static Competition* _competition = nil;
+
 
 +(Competition*)laCompetition
 {
+    static Competition* _competition = nil;
+    
     @synchronized([Competition class])
     {
         if(!_competition)
-            [[self alloc] init];
+            _competition = [[Competition alloc] init];
         
         return _competition;
     }
 }
 
-+(id)alloc
-{
-    @synchronized([_competition class])
-    {
-        NSAssert(_competition == nil, @"Essaye de créer un autre instance");
-        _competition = [super alloc];
-        return _competition;
-    }
-}
 - (id)init {
     self = [super init];
     if (self) {
@@ -48,8 +41,9 @@ static Competition* _competition = nil;
 }
 -(void)ajouterAthlete:(NSString *)pPrenom :(NSString *)pNom :(NSString *)pPays
 {
-    int unNombre = (int)[self nouveauNumeroAthlete];
     
+    int unNombre = (int)[self nouveauNumeroAthlete];
+    NSLog(@"ok2");
     Athlete* unAthlete = [[Athlete alloc] initWithPrenomNomPaysNumero:pPrenom :pNom :pPays :unNombre];
     NSLog(@"%@%@%@", pNom, pPrenom, pPays);
     [lstAthlete addObject:unAthlete];
@@ -63,21 +57,26 @@ static Competition* _competition = nil;
 
 -(int)nouveauNumeroAthlete
 {
-    bool quitte = false;
-    int unNombre;
-    while(!quitte)
-    {
+    /*int unNombre;
+    if([lstAthlete count]==0){
         unNombre = (int)arc4random() * 100 + 1;
-        for(Athlete* unAthlete in lstAthlete)
+    } else {
+        bool quitte = false;
+
+        while(!quitte)
         {
-            if((int)[unAthlete numero] == (int)unNombre)
+            unNombre = (int)arc4random() * 100 + 1;
+            for(Athlete* unAthlete in lstAthlete)
             {
-                break;
+                if((int)[unAthlete numero] == (int)unNombre)
+                {
+                    break;
+                }
+                quitte = true;
             }
-            quitte = true;
         }
-    }
-    return unNombre;
+    }*/
+    return 1;
 }
 
 @end
