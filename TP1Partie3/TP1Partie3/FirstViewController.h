@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Competition.h"
 
 @interface FirstViewController : UIViewController
 - (IBAction)addAthlete:(id)sender;

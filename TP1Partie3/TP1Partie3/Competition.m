@@ -51,7 +51,7 @@ static Competition* _competition = nil;
     int unNombre = (int)[self nouveauNumeroAthlete];
     
     Athlete* unAthlete = [[Athlete alloc] initWithPrenomNomPaysNumero:pPrenom :pNom :pPays :unNombre];
-    
+    NSLog(@"%@%@%@", pNom, pPrenom, pPays);
     [lstAthlete addObject:unAthlete];
     
 }
