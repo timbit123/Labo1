@@ -65,6 +65,10 @@
 }
 
 - (IBAction)addAthlete:(id)sender {
-
+    [[Competition laCompetition] ajouterAthlete:txtPrenom.text :txtNom.text :txtPays.text];
+    txtNom.text = @"";
+    txtNom.text = @"";
+    txtPrenom.text = @"";
+    NSLog(@"button pressed");
 }
 @end
