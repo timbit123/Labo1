@@ -16,6 +16,7 @@
     int position;
     int numero;
     double pointage;
+    double temps;
 }
 
 -(id)initWithPrenomNomPaysNumero: (NSString *)pPrenom: (NSString *)pNom: (NSString *)pPays: (int)pNumero;
@@ -26,5 +27,6 @@
 @property int position;
 @property int numero;
 @property double pointage;
+@property double temps;
 
 @end

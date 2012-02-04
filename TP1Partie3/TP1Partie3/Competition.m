@@ -10,6 +10,7 @@
 
 @implementation Competition
 
+@synthesize distancePiste;
 
 
 +(Competition*)laCompetition
@@ -46,6 +47,39 @@
     Athlete* unAthlete = [[Athlete alloc] initWithPrenomNomPaysNumero:pPrenom :pNom :pPays :unNombre];
     [lstAthlete addObject:unAthlete];
     
+}
+
+
+-(void)setPointageAthleteCourant:(int)pPointageJuges :(double)pTemps
+{
+    
+    if(pPointageJuges == -1)
+    {
+        joueurCourant.position = -1;        
+    }else{
+        //point des juge qui est 75% de 30 points
+        double pointageJuge = ((double)pPointageJuges/35) * (30*0.75);
+    
+        //Speed = distance piste / 9.7m/s ceci donne le temps que le courseur doit faire pour avoir 75% de 7.5pts = 5.625
+        double tempsRequit = (double)distancePiste / 9.7;
+    
+        //on fait le temps obtenu - le temps requit si > 0 on enleve des points, si < 0 on donne des points
+        double differenceTemps = pTemps - tempsRequit;
+    
+        //pour les gars chaque .59 secondes fait varier la note de 0.2 sur une base de 5.625
+        double pointsSpeed = (differenceTemps/0.59)*0.2 + 5.625;
+    
+        if (pointsSpeed < 0)
+            pointsSpeed = 0;
+        else if (pointsSpeed > 7.5)
+            pointsSpeed = 7.5;
+    
+        //donne une note de 30 pts
+        joueurCourant.pointage = pointageJuge + pointsSpeed;
+    
+        joueurCourant.temps = pTemps;
+    }
+    joueurCourant = nil;
 }
 
 
@@ -105,7 +139,7 @@
     if(lstAthlete.count >0)
     {
         for (Athlete* athlete in lstAthlete) {
-            if(athlete.position == -2)
+            if(athlete.pointage == 0)
                 [lstTempAthlete addObject:athlete];
         }   
     }
