@@ -148,9 +148,46 @@
     return lstTempAthlete;
 }
 
+-(NSMutableArray *)setPosition
+{
+    //on défini quesqu'on veut sorté
+    NSSortDescriptor *sortPosition = [[NSSortDescriptor alloc] initWithKey:@"pointage" ascending:NO];
+    
+    //on créer une liste qui sera sorté avec l'ancienne liste
+    NSMutableArray * sortedList = [[NSMutableArray alloc] initWithArray:lstAthlete];
+    
+    //on sort
+    [sortedList sortUsingDescriptors:[NSArray arrayWithObject:sortPosition, nil]];
+    
+    int position = 1;
+    double lastPointage = 0;
+    for (Athlete* athlete in sortedList) {
+        if (athlete.pointage > 0 || athlete.position != -1) {
+            if(lastPointage == athlete.pointage)
+            {
+                //Le joueurs a les même point que lautre joueur
+                athlete.position = position -1;
+                position++;
+            }else
+            {
+                athlete.position = position;
+                position++;
+                lastPointage = athlete.pointage;
+            }
+
+        }
+    }
+    return sortedList;
+}
+
+
 -(NSArray *)sortListAthletePosition
 {
-    
-    return nil;
+    NSMutableArray * sortedListe = [self setPosition];
+    for (Athlete* athlete in sortedListe) {
+        if(athlete.position == 0)
+            [sortedListe removeObject:athlete];
+    }
+    return sortedListe;
 }
 @end
