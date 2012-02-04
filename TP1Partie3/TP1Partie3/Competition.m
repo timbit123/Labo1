@@ -58,14 +58,19 @@
 -(int)nouveauNumeroAthlete
 {
     int unNombre;
+
     if([lstAthlete count]==0){
-        unNombre = (int)arc4random() * 100 + 1;
+        unNombre = (int)arc4random() % 100 + 1;
+        if(unNombre <0)
+            unNombre = unNombre * -1;
     } else {
         bool quitte = false;
 
         while(!quitte)
         {
-            unNombre = (int)arc4random() * 100 + 1;
+            unNombre = (int)arc4random() % 100 + 1;
+            if(unNombre <0)
+                unNombre = unNombre * -1;
             for(Athlete* unAthlete in lstAthlete)
             {
                 if((int)[unAthlete numero] == (int)unNombre)

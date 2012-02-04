@@ -68,7 +68,7 @@
     
     
     [[Competition laCompetition] ajouterAthlete:txtPrenom.text :txtNom.text :txtPays.text];
-    txtNom.text = @"";
+    txtPays.text = @"";
     txtNom.text = @"";
     txtPrenom.text = @"";
     NSLog(@"button pressed");
