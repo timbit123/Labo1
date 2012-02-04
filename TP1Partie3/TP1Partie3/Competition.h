@@ -14,13 +14,17 @@
 @interface Competition : NSObject
 {
     NSMutableArray * lstAthlete;
+    Athlete * joueurCourant;
 }
 +(Competition *)laCompetition;
 
--(NSArray *)getLstAthlete;
 -(void)ajouterAthlete: (Athlete *)pUnAthlete;
 -(void)ajouterAthlete: (NSString *)pPrenom: (NSString *)pNom: (NSString *)pPays;
 -(int)nouveauNumeroAthlete;
+-(Athlete *)getAthleteCourant;
+-(NSArray *)getLstAthlete;
+-(NSArray *)sortListAthleteAttente;
+-(NSArray *)sortListAthletePosition;
 
 
 @end

@@ -43,17 +43,22 @@
 {
     
     int unNombre = (int)[self nouveauNumeroAthlete];
-    NSLog(@"ok2");
     Athlete* unAthlete = [[Athlete alloc] initWithPrenomNomPaysNumero:pPrenom :pNom :pPays :unNombre];
-    NSLog(@"%@%@%@", pNom, pPrenom, pPays);
     [lstAthlete addObject:unAthlete];
     
 }
 
--(NSArray *)getLstAthlete
+
+-(Athlete *)getAthleteCourant
 {
-    return lstAthlete;
+    NSArray * lstAthleteAttente = [self sortListAthleteAttente];
+    if(lstAthleteAttente.count > 0)
+    {
+        joueurCourant = [lstAthleteAttente objectAtIndex:0];
+    }
+    return joueurCourant;
 }
+
 
 -(int)nouveauNumeroAthlete
 {
@@ -85,4 +90,30 @@
     return unNombre;
 }
 
+
+
+-(NSArray *)getLstAthlete
+{
+    return lstAthlete;
+}
+
+
+-(NSArray *)sortListAthleteAttente
+{
+    NSMutableArray * lstTempAthlete = [[NSMutableArray alloc] init];
+
+    if(lstAthlete.count >0)
+    {
+        for (Athlete* athlete in lstAthlete) {
+            if(athlete.position == -2)
+                [lstTempAthlete addObject:athlete];
+        }   
+    }
+    return lstTempAthlete;
+}
+
+-(NSArray *)sortListAthletePosition
+{
+    return nil;
+}
 @end
