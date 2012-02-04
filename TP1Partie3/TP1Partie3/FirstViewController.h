@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Competition.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 - (IBAction)addAthlete:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *txtPays;
 @property (weak, nonatomic) IBOutlet UITextField *txtNom;
 @property (weak, nonatomic) IBOutlet UITextField *txtPrenom;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewAthlete;
 
 @end

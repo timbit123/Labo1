@@ -12,6 +12,7 @@
 @synthesize txtPays;
 @synthesize txtNom;
 @synthesize txtPrenom;
+@synthesize tableViewAthlete;
 
 
 - (void)didReceiveMemoryWarning
@@ -33,6 +34,7 @@
     [self setTxtPays:nil];
     [self setTxtNom:nil];
     [self setTxtPrenom:nil];
+    [self setTableViewAthlete:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -71,6 +73,50 @@
     txtPays.text = @"";
     txtNom.text = @"";
     txtPrenom.text = @"";
-    NSLog(@"button pressed");
+
+    [tableViewAthlete reloadData];
 }
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return [[[Competition laCompetition] getLstAthlete] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
+{
+    return @"My Title";
+}
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    // Set up the cell...
+    Athlete * athlete = [[[Competition laCompetition] getLstAthlete] objectAtIndex:[indexPath row]];
+    
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
+    cell.textLabel.text = [NSString	 stringWithFormat:@"%@", [athlete nom]];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	// open a alert with an OK and cancel button
+	NSString *alertString = [NSString stringWithFormat:@"Clicked on row #%d", [indexPath row]];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
+	[alert show];
+}
+
 @end
