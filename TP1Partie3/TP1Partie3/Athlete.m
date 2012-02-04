@@ -16,6 +16,7 @@
 @synthesize position;
 @synthesize numero;
 @synthesize pointage;
+@synthesize temps;
 
 - (id)init {
     self = [super init];
@@ -31,6 +32,9 @@
         [self setNom:pNom];
         [self setPays:pPays];
         [self setNumero:pNumero];
+        [self setPointage:0];
+        [self setPosition:0];
+        [self setTemps:0];
         
     }
     return self;
