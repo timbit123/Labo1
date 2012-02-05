@@ -88,6 +88,9 @@
 -(Athlete *)getAthleteCourant
 {
     NSArray * lstAthleteAttente = [self getLstAthleteAttente];
+    if(joueurCourant != nil && joueurCourant.pointage == 0)
+        return joueurCourant;
+    
     if(lstAthleteAttente.count > 0)
     {
         joueurCourant = [lstAthleteAttente objectAtIndex:0];
@@ -141,7 +144,7 @@
     if(lstAthlete.count >0)
     {
         for (Athlete* athlete in lstAthlete) {
-            if(athlete.pointage == 0)
+            if(athlete.pointage == 0 && athlete.numero != joueurCourant.numero)
                 [lstTempAthlete addObject:athlete];
         }   
     }
