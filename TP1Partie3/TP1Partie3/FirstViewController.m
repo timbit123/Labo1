@@ -81,6 +81,13 @@
         txtNom.text = @"";
         txtPrenom.text = @"";
         
+        
+        UITabBarController *tabBarController = (UITabBarController *)self.parentViewController;
+        NSArray *tabItems = [tabBarController.tabBar items];
+        UIBarItem *item = (UIBarItem *)[tabItems objectAtIndex:1];
+        [item setEnabled:YES];
+        
+        
         [tableViewAthlete reloadData];
     } else {
         UIAlertView *alert = [[UIAlertView alloc]

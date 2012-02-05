@@ -157,7 +157,7 @@
     NSMutableArray * sortedList = [[NSMutableArray alloc] initWithArray:lstAthlete];
     
     //on sort
-    [sortedList sortUsingDescriptors:[NSArray arrayWithObject:sortPosition, nil]];
+    [sortedList sortUsingDescriptors:[NSArray arrayWithObject:sortPosition]];
     
     int position = 1;
     double lastPointage = 0;
