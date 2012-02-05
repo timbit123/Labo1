@@ -88,7 +88,7 @@
 -(Athlete *)getAthleteCourant
 {
     NSArray * lstAthleteAttente = [self getLstAthleteAttente];
-    if(joueurCourant != nil && joueurCourant.pointage == 0)
+    if(joueurCourant != nil && joueurCourant.pointage == 0 && joueurCourant.position != -1)
         return joueurCourant;
     
     if(lstAthleteAttente.count > 0)
