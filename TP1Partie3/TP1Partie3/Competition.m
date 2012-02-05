@@ -183,11 +183,12 @@
 
 -(NSArray *)sortListAthletePosition
 {
-    NSMutableArray * sortedListe = [self setPosition];
+    NSArray * sortedListe = [self setPosition];
+    NSMutableArray* newSortedListe = [[NSMutableArray alloc]init];
     for (Athlete* athlete in sortedListe) {
-        if(athlete.position == 0)
-            [sortedListe removeObject:athlete];
+        if(athlete.pointage != 0)
+            [newSortedListe addObject:athlete];
     }
-    return sortedListe;
+    return newSortedListe;
 }
 @end

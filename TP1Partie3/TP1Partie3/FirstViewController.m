@@ -76,7 +76,7 @@
 - (IBAction)addAthlete:(id)sender {
     
     if(txtPrenom.text.length > 0 && txtNom.text.length > 0 && txtPays.text.length > 0){
-        [[Competition laCompetition] ajouterAthlete:txtPrenom.text :txtNom.text :txtPays.text];
+        [[Competition laCompetition] ajouterAthlete:txtPrenom.text: txtNom.text: txtPays.text];
         txtPays.text = @"";
         txtNom.text = @"";
         txtPrenom.text = @"";

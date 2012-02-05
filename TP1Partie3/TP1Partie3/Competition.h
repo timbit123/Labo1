@@ -22,7 +22,7 @@
 @property int distancePiste;
 
 -(void)ajouterAthlete: (Athlete *)pUnAthlete;
--(void)ajouterAthlete: (NSString *)pPrenom: (NSString *)pNom: (NSString *)pPays;
+-(void)ajouterAthlete:(NSString *)pPrenom: (NSString *)pNom: (NSString *)pPays;
 -(int)nouveauNumeroAthlete;
 -(Athlete *)getAthleteCourant;
 -(void)setPointageAthleteCourant:(int)pPointageJuges:(double)pTemps;
