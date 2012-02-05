@@ -144,7 +144,7 @@
     if(lstAthlete.count >0)
     {
         for (Athlete* athlete in lstAthlete) {
-            if(athlete.pointage == 0 && athlete.numero != joueurCourant.numero)
+            if(athlete.pointage == 0 && athlete.numero != joueurCourant.numero && athlete.position != -1)
                 [lstTempAthlete addObject:athlete];
         }   
     }
