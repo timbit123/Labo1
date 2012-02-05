@@ -87,7 +87,7 @@
 
 -(Athlete *)getAthleteCourant
 {
-    NSArray * lstAthleteAttente = [self sortListAthleteAttente];
+    NSArray * lstAthleteAttente = [self getLstAthleteAttente];
     if(lstAthleteAttente.count > 0)
     {
         joueurCourant = [lstAthleteAttente objectAtIndex:0];
@@ -134,7 +134,7 @@
 }
 
 
--(NSArray *)sortListAthleteAttente
+-(NSArray *)getLstAthleteAttente
 {
     NSMutableArray * lstTempAthlete = [[NSMutableArray alloc] init];
 
@@ -181,7 +181,7 @@
 }
 
 
--(NSArray *)sortListAthletePosition
+-(NSArray *)getLstAthletePosition
 {
     NSArray * sortedListe = [self setPosition];
     NSMutableArray* newSortedListe = [[NSMutableArray alloc]init];

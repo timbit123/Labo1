@@ -28,8 +28,8 @@
 -(void)setPointageAthleteCourant:(int)pPointageJuges:(double)pTemps;
 -(NSMutableArray *)setPosition;
 -(NSArray *)getLstAthlete;
--(NSArray *)sortListAthleteAttente;
--(NSArray *)sortListAthletePosition;
+-(NSArray *)getLstAthleteAttente;
+-(NSArray *)getLstAthletePosition;
 
 
 @end

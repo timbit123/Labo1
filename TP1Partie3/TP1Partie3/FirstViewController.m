@@ -9,6 +9,8 @@
 #import "FirstViewController.h"
 
 @implementation FirstViewController
+@synthesize btnDemarrer;
+@synthesize btnAjouter;
 @synthesize txtPays;
 @synthesize txtNom;
 @synthesize txtPrenom;
@@ -42,6 +44,8 @@
     [self setTxtNom:nil];
     [self setTxtPrenom:nil];
     [self setTableViewAthlete:nil];
+    [self setBtnDemarrer:nil];
+    [self setBtnAjouter:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -82,10 +86,7 @@
         txtPrenom.text = @"";
         
         
-        UITabBarController *tabBarController = (UITabBarController *)self.parentViewController;
-        NSArray *tabItems = [tabBarController.tabBar items];
-        UIBarItem *item = (UIBarItem *)[tabItems objectAtIndex:1];
-        [item setEnabled:YES];
+        
         
         
         [tableViewAthlete reloadData];
@@ -141,21 +142,52 @@
     return cell;
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Débuter"])
+    {
+        
+        [btnAjouter setEnabled:NO];
+        [btnDemarrer setEnabled:NO];
+        [txtNom setEnabled:NO];
+        [txtPays setEnabled:NO];
+        [txtPrenom setEnabled:NO];
+        
+        
+        UITabBarController *tabBarController = (UITabBarController *)self.parentViewController;
+        NSArray *tabItems = [tabBarController.tabBar items];
+        UIBarItem *item = (UIBarItem *)[tabItems objectAtIndex:1];
+        [item setEnabled:YES];
+        
+        [tabBarController setSelectedIndex:1];
+    }
+}
+
+
+
 - (IBAction)btnDemarrerClick:(id)sender {
     
     int count = [[[Competition laCompetition] getLstAthlete] count];
     
     if(count==0){
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Vous devez ajouter un moins un athlète avant de démarrer la compétition."
+                              initWithTitle:@"Vous devez ajouter au moins un athlète avant de démarrer la compétition."
                               message:nil
                               delegate:nil
                               cancelButtonTitle:nil
                               otherButtonTitles:@"OK", nil];
         [alert show];
     } else {
-        UITabBarController *tabBarController = (UITabBarController *)self.parentViewController;
-        [tabBarController setSelectedIndex:1];
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Si vous décidez de débuter la compétion, vous ne pourrez plus ajouter d'athlète."
+                              message:nil
+                              delegate:self
+                              cancelButtonTitle:@"Ne pas débuter"
+                              otherButtonTitles:@"Débuter", nil];
+        [alert show];
+        
     }
     
 }

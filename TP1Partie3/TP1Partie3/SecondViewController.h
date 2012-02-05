@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Competition.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDemarrer;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDNF;
+- (IBAction)demarrerClick:(id)sender;
+- (IBAction)dnfClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lblCourant;
 
 @end

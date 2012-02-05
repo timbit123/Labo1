@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtPrenom;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewAthlete;
 - (IBAction)btnDemarrerClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDemarrer;
+@property (weak, nonatomic) IBOutlet UIButton *btnAjouter;
 
 @end

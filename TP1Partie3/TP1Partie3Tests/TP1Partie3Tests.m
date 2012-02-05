@@ -51,7 +51,7 @@
     NSLog(@"Liste joueur en attente");
     NSLog(@"---------------------------------------------------");
     
-    for (Athlete* athlete in [competition sortListAthleteAttente]) {
+    for (Athlete* athlete in [competition getLstAthleteAttente]) {
         NSLog(@"%@ : %@ : %@ : %d : %f : %d", athlete.prenom, athlete.nom, athlete.pays, athlete.numero, athlete.pointage, athlete.position);
     }
     
@@ -131,7 +131,7 @@
     NSLog(@"Liste joueur en attente");
     NSLog(@"---------------------------------------------------");
     
-    for (Athlete* athlete in [competition sortListAthleteAttente]) {
+    for (Athlete* athlete in [competition getLstAthleteAttente]) {
         NSLog(@"%@ : %@ : %@ : %d : %f : %d", athlete.prenom, athlete.nom, athlete.pays, athlete.numero, athlete.pointage, athlete.position);
     }
     
@@ -140,7 +140,7 @@
     NSLog(@"Liste position");
     NSLog(@"---------------------------------------------------");
     
-    for (Athlete* athlete in [competition sortListAthletePosition]) {
+    for (Athlete* athlete in [competition getLstAthletePosition]) {
         NSLog(@"%@ : %@ : %@ : %d : %f : %d", athlete.prenom, athlete.nom, athlete.pays, athlete.numero, athlete.pointage, athlete.position);
     }
     
