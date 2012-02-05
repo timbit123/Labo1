@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtNom;
 @property (weak, nonatomic) IBOutlet UITextField *txtPrenom;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewAthlete;
+- (IBAction)btnDemarrerClick:(id)sender;
 
 @end

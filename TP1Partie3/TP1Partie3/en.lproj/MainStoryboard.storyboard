@@ -17,7 +17,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem title="Démarrer compétition" id="rfY-GW-6Hg"/>
+                                    <barButtonItem title="Démarrer compétition" id="rfY-GW-6Hg">
+                                        <connections>
+                                            <action selector="btnDemarrerClick:" destination="2" id="pO9-0C-qBn"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ajouter les participants" lineBreakMode="tailTruncation" minimumFontSize="10" id="528-68-cri">
@@ -64,6 +68,47 @@
                                 <rect key="frame" x="20" y="145" width="661" height="790"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MyCell" id="3wU-IP-FH5">
+                                        <rect key="frame" x="0.0" y="22" width="661" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="661" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="#" lineBreakMode="tailTruncation" minimumFontSize="10" id="jbe-Y2-Rwc">
+                                                    <rect key="frame" x="43" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Prénom" lineBreakMode="tailTruncation" minimumFontSize="10" id="Uh5-F1-DE7">
+                                                    <rect key="frame" x="186" y="11" width="60" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" text="Nom" lineBreakMode="tailTruncation" minimumFontSize="10" id="hPr-iN-IIh">
+                                                    <rect key="frame" x="338" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" text="Pays" lineBreakMode="tailTruncation" minimumFontSize="10" id="XRE-iZ-Puv">
+                                                    <rect key="frame" x="489" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="22B-9g-Y5R"/>
                                     <outlet property="delegate" destination="2" id="wtm-yv-1JX"/>
@@ -73,6 +118,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Les athlètes" image="first" id="7"/>
+                    <navigationItem key="navigationItem" id="6Mo-4a-7Ng"/>
                     <connections>
                         <outlet property="tableViewAthlete" destination="00b-dX-6yN" id="Oer-ff-z8k"/>
                         <outlet property="txtNom" destination="6zb-3s-aXq" id="6KP-7h-z4t"/>
@@ -295,6 +341,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="La compétition" image="second" id="6"/>
+                    <navigationItem key="navigationItem" id="798-IL-li5"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="3042" y="1284"/>
@@ -323,24 +370,6 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="FirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addAthlete:"/>
-                <relationship kind="outlet" name="tableViewAthlete" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="txtNom" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtPays" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtPrenom" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-        </class>
-        <class className="ThirdViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThirdViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -27,6 +27,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.parentViewController;
+    NSArray *tabItems = [tabBarController.tabBar items];
+    UIBarItem *item = (UIBarItem *)[tabItems objectAtIndex:1];
+    [item setEnabled:NO];
+    item = (UIBarItem *)[tabItems objectAtIndex:2];
+    [item setEnabled:NO];
 }
 
 - (void)viewDidUnload
@@ -68,13 +75,22 @@
 
 - (IBAction)addAthlete:(id)sender {
     
-    
-    [[Competition laCompetition] ajouterAthlete:txtPrenom.text :txtNom.text :txtPays.text];
-    txtPays.text = @"";
-    txtNom.text = @"";
-    txtPrenom.text = @"";
-
-    [tableViewAthlete reloadData];
+    if(txtPrenom.text.length > 0 && txtNom.text.length > 0 && txtPays.text.length > 0){
+        [[Competition laCompetition] ajouterAthlete:txtPrenom.text :txtNom.text :txtPays.text];
+        txtPays.text = @"";
+        txtNom.text = @"";
+        txtPrenom.text = @"";
+        
+        [tableViewAthlete reloadData];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Veuillez remplir tous les champs pour ajouter un athlète."
+                              message:nil
+                              delegate:nil
+                              cancelButtonTitle:nil
+                              otherButtonTitles:@"OK", nil];
+        [alert show];
+    }
 }
 
 
@@ -90,33 +106,50 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 
 {
-    return @"My Title";
+    return @"Athlètes inscrits à la compétition";
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // Set up the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell"];
+
     Athlete * athlete = [[[Competition laCompetition] getLstAthlete] objectAtIndex:[indexPath row]];
     
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-    cell.textLabel.text = [NSString	 stringWithFormat:@"%@", [athlete nom]];
+    
+    UILabel *label;
+    
+    label = (UILabel *)[cell viewWithTag:1];
+    label.text = [NSString stringWithFormat:@"%d", [athlete numero]];
+    
+    label = (UILabel *)[cell viewWithTag:2];
+    label.text = [athlete prenom];
+    
+    label = (UILabel *)[cell viewWithTag:3];
+    label.text = [athlete nom];
+    
+    label = (UILabel *)[cell viewWithTag:4];
+    label.text = [athlete pays];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// open a alert with an OK and cancel button
-	NSString *alertString = [NSString stringWithFormat:@"Clicked on row #%d", [indexPath row]];
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertString message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
-	[alert show];
+- (IBAction)btnDemarrerClick:(id)sender {
+    
+    int count = [[[Competition laCompetition] getLstAthlete] count];
+    
+    if(count==0){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Vous devez ajouter un moins un athlète avant de démarrer la compétition."
+                              message:nil
+                              delegate:nil
+                              cancelButtonTitle:nil
+                              otherButtonTitles:@"OK", nil];
+        [alert show];
+    } else {
+        UITabBarController *tabBarController = (UITabBarController *)self.parentViewController;
+        [tabBarController setSelectedIndex:1];
+    }
+    
 }
-
 @end
