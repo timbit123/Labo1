@@ -26,6 +26,7 @@
 -(int)nouveauNumeroAthlete;
 -(Athlete *)getAthleteCourant;
 -(void)setPointageAthleteCourant:(int)pPointageJuges:(double)pTemps;
+-(NSMutableArray *)setPosition;
 -(NSArray *)getLstAthlete;
 -(NSArray *)sortListAthleteAttente;
 -(NSArray *)sortListAthletePosition;

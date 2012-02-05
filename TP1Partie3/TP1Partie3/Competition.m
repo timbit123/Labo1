@@ -55,7 +55,9 @@
     
     if(pPointageJuges == -1)
     {
-        joueurCourant.position = -1;        
+        //Joueurs DNF
+        joueurCourant.position = -1;
+        
     }else{
         //point des juge qui est 75% de 30 points
         double pointageJuge = ((double)pPointageJuges/35) * (30*0.75);
@@ -64,7 +66,7 @@
         double tempsRequit = (double)distancePiste / 9.7;
     
         //on fait le temps obtenu - le temps requit si > 0 on enleve des points, si < 0 on donne des points
-        double differenceTemps = pTemps - tempsRequit;
+        double differenceTemps = tempsRequit - pTemps;
     
         //pour les gars chaque .59 secondes fait varier la note de 0.2 sur une base de 5.625
         double pointsSpeed = (differenceTemps/0.59)*0.2 + 5.625;
@@ -146,9 +148,46 @@
     return lstTempAthlete;
 }
 
+-(NSMutableArray *)setPosition
+{
+    //on défini quesqu'on veut sorté
+    NSSortDescriptor *sortPosition = [[NSSortDescriptor alloc] initWithKey:@"pointage" ascending:NO];
+    
+    //on créer une liste qui sera sorté avec l'ancienne liste
+    NSMutableArray * sortedList = [[NSMutableArray alloc] initWithArray:lstAthlete];
+    
+    //on sort
+    [sortedList sortUsingDescriptors:[NSArray arrayWithObject:sortPosition, nil]];
+    
+    int position = 1;
+    double lastPointage = 0;
+    for (Athlete* athlete in sortedList) {
+        if (athlete.pointage > 0 || athlete.position != -1) {
+            if(lastPointage == athlete.pointage)
+            {
+                //Le joueurs a les même point que lautre joueur
+                athlete.position = position -1;
+                position++;
+            }else
+            {
+                athlete.position = position;
+                position++;
+                lastPointage = athlete.pointage;
+            }
+
+        }
+    }
+    return sortedList;
+}
+
+
 -(NSArray *)sortListAthletePosition
 {
-    
-    return nil;
+    NSMutableArray * sortedListe = [self setPosition];
+    for (Athlete* athlete in sortedListe) {
+        if(athlete.position == 0)
+            [sortedListe removeObject:athlete];
+    }
+    return sortedListe;
 }
 @end
