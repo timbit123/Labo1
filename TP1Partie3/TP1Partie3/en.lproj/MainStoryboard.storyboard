@@ -124,7 +124,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Participants" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Participants" image="first.png" id="7"/>
                     <connections>
                         <outlet property="btnAjouter" destination="UD0-Zf-PlX" id="PSD-Rz-uH7"/>
                         <outlet property="btnDemarrer" destination="rfY-GW-6Hg" id="0SE-qI-MPu"/>
@@ -215,7 +215,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Classement" id="dUv-7r-nON"/>
+                    <tabBarItem key="tabBarItem" title="Classement" image="first.png" id="dUv-7r-nON"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="3041" y="2431"/>
@@ -396,7 +396,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Compétition" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Compétition" image="first.png" id="6"/>
                     <navigationItem key="navigationItem" id="798-IL-li5"/>
                     <connections>
                         <outlet property="btnConfirmer" destination="9nv-Om-w2B" id="rq7-hM-QW4"/>
@@ -437,8 +437,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
+        <image name="first.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="FirstViewController" superclassName="UIViewController">
