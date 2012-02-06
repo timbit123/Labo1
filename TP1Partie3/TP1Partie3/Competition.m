@@ -50,7 +50,7 @@
 }
 
 
--(void)setPointageAthleteCourant:(int)pPointageJuges :(double)pTemps
+-(void)setPointageAthleteCourant:(double)pPointageJuges :(double)pTemps
 {
     
     if(pPointageJuges == -1)
@@ -60,7 +60,7 @@
         
     }else{
         //point des juge qui est 75% de 30 points
-        double pointageJuge = ((double)pPointageJuges/25) * (30*0.75);
+        double pointageJuge = (pPointageJuges/25) * (30*0.75);
     
         //Speed = distance piste / 9.7m/s ceci donne le temps que le courseur doit faire pour avoir 75% de 7.5pts = 5.625
         double tempsRequit = (double)distancePiste / 9.7;
