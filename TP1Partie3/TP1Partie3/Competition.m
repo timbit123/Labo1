@@ -171,7 +171,7 @@
                 //Le joueurs a les même point que lautre joueur
                 athlete.position = position -1;
                 position++;
-            }else
+            }else if (athlete.position != -1)
             {
                 athlete.position = position;
                 position++;
