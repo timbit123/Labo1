@@ -12,6 +12,8 @@
 @interface SecondViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
     bool isDescente;
+    NSDate *start;
+    float timePassed;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDemarrer;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDNF;
@@ -27,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtJuge5;
 @property (weak, nonatomic) IBOutlet UITextField *txtJuge6;
 @property (weak, nonatomic) IBOutlet UITextField *txtJuge7;
+@property (weak, nonatomic) IBOutlet UILabel *lblTimer;
 
 - (IBAction)continuerClick:(id)sender;
 

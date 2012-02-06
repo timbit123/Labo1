@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ThirdViewController : UIViewController
-
+#import "Competition.h"
+@interface ThirdViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+- (IBAction)retourClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *lstPositions;
 @end

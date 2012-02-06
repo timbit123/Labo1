@@ -19,6 +19,7 @@
 @synthesize txtJuge5;
 @synthesize txtJuge6;
 @synthesize txtJuge7;
+@synthesize lblTimer;
 @synthesize btnDemarrer;
 @synthesize btnDNF;
 
@@ -51,6 +52,7 @@
     [self setTxtJuge5:nil];
     [self setTxtJuge6:nil];
     [self setTxtJuge7:nil];
+    [self setLblTimer:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -154,6 +156,10 @@
         [txtJuge6 setEnabled:YES];
         [txtJuge7 setEnabled:YES];
         
+        
+        timePassed = [start timeIntervalSinceNow]*-1.0f;
+        [lblTimer setText:[NSString stringWithFormat:@"%.02f s", timePassed]];
+        
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"La descente est terminée. Veuillez entrer le résultat des juges."
                               message:nil
@@ -161,6 +167,9 @@
                               cancelButtonTitle:nil
                               otherButtonTitles:@"OK", nil];
         [alert show];
+        
+        
+        
     } else {
         Athlete *courant = [[Competition laCompetition] getAthleteCourant];
         [lblCourant setText:[NSString stringWithFormat:@"#%d - %@ %@ du pays: %@", [courant numero], [courant prenom], [courant nom], [courant pays]]];
@@ -169,7 +178,7 @@
         [lstAttente reloadData];
         [btnConfirmer setEnabled:NO];
         isDescente = YES;
-        
+        [lblTimer setText:@"Calcul en cours..."];
         [txtJuge1 setEnabled:NO];
         [txtJuge2 setEnabled:NO];
         [txtJuge3 setEnabled:NO];
@@ -177,6 +186,7 @@
         [txtJuge5 setEnabled:NO];
         [txtJuge6 setEnabled:NO];
         [txtJuge7 setEnabled:NO];
+        start = [NSDate date];
     }
     
 }
@@ -190,7 +200,7 @@
     isDescente = NO;
     
     [lblCourant setText:@"Aucun"];
-    
+    [lblTimer setText:@"DNF"];
     [txtJuge1 setEnabled:NO];
     [txtJuge2 setEnabled:NO];
     [txtJuge3 setEnabled:NO];
@@ -198,6 +208,39 @@
     [txtJuge5 setEnabled:NO];
     [txtJuge6 setEnabled:NO];
     [txtJuge7 setEnabled:NO];
+    
+    if([[Competition laCompetition] getAthleteCourant]==nil){
+        [btnDemarrer setEnabled:NO];
+        [btnConfirmer setEnabled:NO];
+        [txtJuge1 setEnabled:NO];
+        [txtJuge2 setEnabled:NO];
+        [txtJuge3 setEnabled:NO];
+        [txtJuge4 setEnabled:NO];
+        [txtJuge5 setEnabled:NO];
+        [txtJuge6 setEnabled:NO];
+        [txtJuge7 setEnabled:NO];
+        
+        
+        [txtJuge1 setText:@""];
+        [txtJuge2 setText:@""];
+        [txtJuge3 setText:@""];
+        [txtJuge4 setText:@""];
+        [txtJuge5 setText:@""];
+        [txtJuge6 setText:@""];
+        [txtJuge7 setText:@""];
+        
+        [lblCourant setText:@"Compétition terminée"];
+        
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"La compétition est terminée. Voulez-vous voir les résultats?"
+                              message:nil
+                              delegate:self
+                              cancelButtonTitle:@"Non"
+                              otherButtonTitles:@"Oui", nil];
+        [alert show];
+        
+        
+    }
 }
 - (IBAction)continuerClick:(id)sender {
     
@@ -223,28 +266,64 @@
                     total += (int)[sorted objectAtIndex:i];
                 }
                 
-                [[Competition laCompetition] setPointageAthleteCourant:total :5.0f];
+                [[Competition laCompetition] setPointageAthleteCourant:total :timePassed];
                 //SI DERNIER -> MÉDAILLE
-                [btnDemarrer setEnabled:YES];
-                [btnConfirmer setEnabled:NO];
-                [txtJuge1 setEnabled:NO];
-                [txtJuge2 setEnabled:NO];
-                [txtJuge3 setEnabled:NO];
-                [txtJuge4 setEnabled:NO];
-                [txtJuge5 setEnabled:NO];
-                [txtJuge6 setEnabled:NO];
-                [txtJuge7 setEnabled:NO];
+                if([[Competition laCompetition] getAthleteCourant]==nil){
+                    [btnDemarrer setEnabled:NO];
+                    [btnConfirmer setEnabled:NO];
+                    [txtJuge1 setEnabled:NO];
+                    [txtJuge2 setEnabled:NO];
+                    [txtJuge3 setEnabled:NO];
+                    [txtJuge4 setEnabled:NO];
+                    [txtJuge5 setEnabled:NO];
+                    [txtJuge6 setEnabled:NO];
+                    [txtJuge7 setEnabled:NO];
+                    
+                    
+                    [txtJuge1 setText:@""];
+                    [txtJuge2 setText:@""];
+                    [txtJuge3 setText:@""];
+                    [txtJuge4 setText:@""];
+                    [txtJuge5 setText:@""];
+                    [txtJuge6 setText:@""];
+                    [txtJuge7 setText:@""];
+                    
+                    [lblCourant setText:@"Compétition terminée"];
+                    
+                    UIAlertView *alert = [[UIAlertView alloc]
+                                          initWithTitle:@"La compétition est terminée. Voulez-vous voir les résultats?"
+                                          message:nil
+                                          delegate:self
+                                          cancelButtonTitle:@"Non"
+                                          otherButtonTitles:@"Oui", nil];
+                    [alert show];
+                    
+                    
+                } else {
+                    [btnDemarrer setEnabled:YES];
+                    [btnConfirmer setEnabled:NO];
+                    [txtJuge1 setEnabled:NO];
+                    [txtJuge2 setEnabled:NO];
+                    [txtJuge3 setEnabled:NO];
+                    [txtJuge4 setEnabled:NO];
+                    [txtJuge5 setEnabled:NO];
+                    [txtJuge6 setEnabled:NO];
+                    [txtJuge7 setEnabled:NO];
+                    
+                    
+                    [txtJuge1 setText:@""];
+                    [txtJuge2 setText:@""];
+                    [txtJuge3 setText:@""];
+                    [txtJuge4 setText:@""];
+                    [txtJuge5 setText:@""];
+                    [txtJuge6 setText:@""];
+                    [txtJuge7 setText:@""];
+                    
+                    [lblCourant setText:@"Aucun"];
+                }
                 
                 
-                [txtJuge1 setText:@""];
-                [txtJuge2 setText:@""];
-                [txtJuge3 setText:@""];
-                [txtJuge4 setText:@""];
-                [txtJuge5 setText:@""];
-                [txtJuge6 setText:@""];
-                [txtJuge7 setText:@""];
                 
-                [lblCourant setText:@"Aucun"];
             } else {
                 UIAlertView *alert = [[UIAlertView alloc]
                                       initWithTitle:@"Le résultat doit être un entier entre 0 et 5."
@@ -274,5 +353,16 @@
         [alert show];
     }
     
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Oui"])
+    {
+        UITabBarController *tabBarController = (UITabBarController *)self.parentViewController;
+        [tabBarController setSelectedIndex:2];
+    }
 }
 @end
