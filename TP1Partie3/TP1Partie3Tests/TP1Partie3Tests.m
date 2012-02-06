@@ -63,7 +63,7 @@
     Athlete* athleteCourant = [competition getAthleteCourant];
             NSLog(@"%@ : %@ : %@ : %d : %f : %d", athleteCourant.prenom, athleteCourant.nom, athleteCourant.pays, athleteCourant.numero, athleteCourant.pointage, athleteCourant.position);
     
-    [competition setPointageAthleteCourant:32 :30.350f];
+    [competition setPointageAthleteCourant:25 :30.350f];
     
     NSLog(@"---------------------------------------------------");
     NSLog(@"---------------------------------------------------");
@@ -73,7 +73,7 @@
     athleteCourant = [competition getAthleteCourant];
     NSLog(@"%@ : %@ : %@ : %d : %f : %d", athleteCourant.prenom, athleteCourant.nom, athleteCourant.pays, athleteCourant.numero, athleteCourant.pointage, athleteCourant.position);
     
-    [competition setPointageAthleteCourant:32 :30.350f];
+    [competition setPointageAthleteCourant:25 :30.350f];
     
     NSLog(@"---------------------------------------------------");
     NSLog(@"---------------------------------------------------");
@@ -103,7 +103,7 @@
     athleteCourant = [competition getAthleteCourant];
     NSLog(@"%@ : %@ : %@ : %d : %f : %d", athleteCourant.prenom, athleteCourant.nom, athleteCourant.pays, athleteCourant.numero, athleteCourant.pointage, athleteCourant.position);
     
-    [competition setPointageAthleteCourant:31 :33.234f];
+    [competition setPointageAthleteCourant:21 :33.234f];
     
     
     NSLog(@"---------------------------------------------------");
@@ -124,7 +124,7 @@
     athleteCourant = [competition getAthleteCourant];
     NSLog(@"%@ : %@ : %@ : %d : %f : %d", athleteCourant.prenom, athleteCourant.nom, athleteCourant.pays, athleteCourant.numero, athleteCourant.pointage, athleteCourant.position);
     
-    [competition setPointageAthleteCourant:35 : 30.928f];
+    [competition setPointageAthleteCourant:22 : 30.928f];
     
     NSLog(@"---------------------------------------------------");
     NSLog(@"---------------------------------------------------");
