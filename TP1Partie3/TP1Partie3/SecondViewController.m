@@ -246,24 +246,28 @@
     
     if(txtJuge1.text.length > 0 && txtJuge2.text.length > 0 && txtJuge3.text.length > 0 && txtJuge4.text.length > 0 && txtJuge5.text.length > 0 && txtJuge6.text.length > 0 && txtJuge7.text.length > 0){
         
-        if([[NSScanner scannerWithString:txtJuge1.text] scanInt:NULL] && [[NSScanner scannerWithString:txtJuge2.text] scanInt:NULL] && [[NSScanner scannerWithString:txtJuge3.text] scanInt:NULL] && [[NSScanner scannerWithString:txtJuge1.text] scanInt:NULL] && [[NSScanner scannerWithString:txtJuge4.text] scanInt:NULL] && [[NSScanner scannerWithString:txtJuge5.text] scanInt:NULL] && [[NSScanner scannerWithString:txtJuge6.text] scanInt:NULL] && [[NSScanner scannerWithString:txtJuge7.text] scanInt:NULL]){
-            int p1 = [txtJuge1.text intValue];
-            int p2 = [txtJuge2.text intValue];
-            int p3 = [txtJuge3.text intValue];
-            int p4 = [txtJuge4.text intValue];
-            int p5 = [txtJuge5.text intValue];
-            int p6 = [txtJuge6.text intValue];
-            int p7 = [txtJuge7.text intValue];
+        if([[NSScanner scannerWithString:txtJuge1.text] scanDouble:NULL] && [[NSScanner scannerWithString:txtJuge2.text] scanDouble:NULL] && [[NSScanner scannerWithString:txtJuge3.text] scanDouble:NULL] && [[NSScanner scannerWithString:txtJuge1.text] scanDouble:NULL] && [[NSScanner scannerWithString:txtJuge4.text] scanDouble:NULL] && [[NSScanner scannerWithString:txtJuge5.text] scanDouble:NULL] && [[NSScanner scannerWithString:txtJuge6.text] scanDouble:NULL] && [[NSScanner scannerWithString:txtJuge7.text] scanDouble:NULL]){
+            double p1 = [txtJuge1.text doubleValue];
+            double p2 = [txtJuge2.text doubleValue];
+            double p3 = [txtJuge3.text doubleValue];
+            double p4 = [txtJuge4.text doubleValue];
+            double p5 = [txtJuge5.text doubleValue];
+            double p6 = [txtJuge6.text doubleValue];
+            double p7 = [txtJuge7.text doubleValue];
             
             if((p1>=0&&p1<=5)&&(p2>=0&&p2<=5)&&(p3>=0&&p3<=5)&&(p4>=0&&p4<=5)&&(p5>=0&&p5<=5)&&(p6>=0&&p6<=5)&&(p7>=0&&p7<=5)){
                 //array, sort, enleve extremités
                 NSArray *arr, *sorted;
-                arr = [NSArray arrayWithObjects:[NSNumber numberWithInt:p1], [NSNumber numberWithInt:p2], [NSNumber numberWithInt:p3], [NSNumber numberWithInt:p4], [NSNumber numberWithInt:p5], [NSNumber numberWithInt:p6], [NSNumber numberWithInt:p7], nil];
+                arr = [NSArray arrayWithObjects:[NSNumber numberWithDouble:p1], [NSNumber numberWithDouble:p2], [NSNumber numberWithDouble:p3], [NSNumber numberWithDouble:p4], [NSNumber numberWithDouble:p5], [NSNumber numberWithDouble:p6], [NSNumber numberWithDouble:p7], nil];
                 sorted = [arr sortedArrayUsingSelector:@selector(compare:)];
                 
-                int total = 0;
-                for(int i = 1; i<=sorted.count-1; i++){
-                    total += (int)[sorted objectAtIndex:i];
+                //NSLog(@"array: %@", sorted);
+                
+                double total = 0;
+                for(int i = 1; i<sorted.count-1; i++){
+                    NSNumber *current = (NSNumber *)[sorted objectAtIndex:i];
+                    //NSLog(@"Note: %f", [current doubleValue]);
+                    total += [current doubleValue];
                 }
                 
                 [[Competition laCompetition] setPointageAthleteCourant:total :timePassed];
