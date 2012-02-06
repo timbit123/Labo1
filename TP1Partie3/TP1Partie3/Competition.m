@@ -11,8 +11,7 @@
 @implementation Competition
 
 @synthesize distancePiste;
-
-
+int const DISTANCE_PISTE = 300;
 +(Competition*)laCompetition
 {
     static Competition* _competition = nil;
@@ -63,8 +62,13 @@
         double pointageJuge = (pPointageJuges/25) * (30*0.75);
     
         //Speed = distance piste / 9.7m/s ceci donne le temps que le courseur doit faire pour avoir 75% de 7.5pts = 5.625
-        double tempsRequit = (double)distancePiste / 9.7;
-    
+        double tempsRequit;
+        if(distancePiste != 0)
+        {
+        tempsRequit = (double)distancePiste / 9.7;
+        }else{
+            tempsRequit = (double)DISTANCE_PISTE / 9.7;
+        }
         //on fait le temps obtenu - le temps requit si > 0 on enleve des points, si < 0 on donne des points
         double differenceTemps = tempsRequit - pTemps;
     

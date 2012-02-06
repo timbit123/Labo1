@@ -13,6 +13,7 @@
 //SINGLETON
 @interface Competition : NSObject
 {
+    int const DISTANCE_PISTE;
     NSMutableArray * lstAthlete;
     Athlete * joueurCourant;
     int distancePiste;
