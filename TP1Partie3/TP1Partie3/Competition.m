@@ -165,13 +165,13 @@
     int position = 1;
     double lastPointage = 0;
     for (Athlete* athlete in sortedList) {
-        if (athlete.pointage > 0 || athlete.position != -1) {
+        if (athlete.pointage > 0 && athlete.position != -1) {
             if(lastPointage == athlete.pointage)
             {
                 //Le joueurs a les même point que lautre joueur
                 athlete.position = position -1;
                 position++;
-            }else if (athlete.position != -1)
+            }else
             {
                 athlete.position = position;
                 position++;
@@ -189,7 +189,7 @@
     NSArray * sortedListe = [self setPosition];
     NSMutableArray* newSortedListe = [[NSMutableArray alloc]init];
     for (Athlete* athlete in sortedListe) {
-        if(athlete.pointage != 0)
+        if(athlete.pointage != 0 || athlete.position == -1)
             [newSortedListe addObject:athlete];
     }
     return newSortedListe;

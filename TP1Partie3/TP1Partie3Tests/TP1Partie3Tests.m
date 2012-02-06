@@ -83,7 +83,7 @@
     athleteCourant = [competition getAthleteCourant];
     NSLog(@"%@ : %@ : %@ : %d : %f : %d", athleteCourant.prenom, athleteCourant.nom, athleteCourant.pays, athleteCourant.numero, athleteCourant.pointage, athleteCourant.position);
     
-    [competition setPointageAthleteCourant:25 :46.87f];
+    [competition setPointageAthleteCourant:-1 :46.87f];
     
     NSLog(@"---------------------------------------------------");
     NSLog(@"---------------------------------------------------");
