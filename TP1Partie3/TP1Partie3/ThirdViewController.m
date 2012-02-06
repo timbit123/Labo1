@@ -46,7 +46,50 @@
     [lstPositions reloadData];
     
     if([[Competition laCompetition] getAthleteCourant]==nil){
-        NSString *medailles = @"test";
+        
+        NSMutableArray *or = [NSMutableArray arrayWithCapacity:3];
+        NSMutableArray *argent = [NSMutableArray arrayWithCapacity:3];
+        NSMutableArray *bronze = [NSMutableArray arrayWithCapacity:3];
+        Athlete * athlete = nil;
+        
+        int cpt = 0;
+        for(id obj in [[Competition laCompetition] getLstAthletePosition]){
+            if(cpt==3){
+                break;
+            }
+            athlete = (Athlete *)obj;
+            if([athlete position]==1){
+                [or addObject:athlete];
+                cpt++;
+            } else if([athlete position]==2){
+                [argent addObject:athlete];
+                cpt++;
+            } else if([athlete position]==3){
+                [bronze addObject:athlete];
+                cpt++;
+            }
+        }
+        
+        
+        NSMutableString *medailles = [NSMutableString stringWithString:@""];
+        for(id obj in or){
+            athlete = (Athlete *)obj;
+            [medailles appendString:[NSString stringWithFormat: @"OR : %d %@ %@\n", [athlete numero], [athlete prenom], [athlete nom]]];
+        }
+        
+        for(id obj in argent){
+            athlete = (Athlete *)obj;
+            [medailles appendString:[NSString stringWithFormat: @"ARGENT : %d %@ %@\n", [athlete numero], [athlete prenom], [athlete nom]]];
+        }
+        
+        for(id obj in bronze){
+            athlete = (Athlete *)obj;
+            [medailles appendString:[NSString stringWithFormat: @"BRONZE : %d %@ %@\n", [athlete numero], [athlete prenom], [athlete nom]]];
+        }
+        
+        
+        
+        
         [lblMedailles setText:medailles];
     }
 }
