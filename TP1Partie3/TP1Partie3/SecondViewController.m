@@ -270,6 +270,7 @@
                     total += [current doubleValue];
                 }
                 
+                NSLog(@"%f", timePassed);
                 [[Competition laCompetition] setPointageAthleteCourant:total :timePassed];
                 //SI DERNIER -> MÉDAILLE
                 if([[Competition laCompetition] getAthleteCourant]==nil){

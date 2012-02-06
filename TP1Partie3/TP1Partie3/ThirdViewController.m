@@ -106,13 +106,25 @@
         label = (UILabel *)[cell viewWithTag:5];
         label.text = @"Pays";
         label.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
+        
+        label = (UILabel *)[cell viewWithTag:6];
+        label.text = @"Points";
+        label.font = [UIFont fontWithName:@"TrebuchetMS-Bold" size:18];
+
     } else {
         Athlete * athlete = [[[Competition laCompetition] getLstAthletePosition] objectAtIndex:[indexPath row]-1];
         
         
         UILabel *label;
-        label = (UILabel *)[cell viewWithTag:1];
-        label.text = [NSString stringWithFormat:@"%d", [athlete position]];
+        
+        if([athlete position]==-1){
+            label = (UILabel *)[cell viewWithTag:1];
+            label.text = @"DNF";
+        } else {
+            label = (UILabel *)[cell viewWithTag:1];
+            label.text = [NSString stringWithFormat:@"%d", [athlete position]];
+        }
+        
         
         
         label = (UILabel *)[cell viewWithTag:2];
@@ -126,6 +138,9 @@
         
         label = (UILabel *)[cell viewWithTag:5];
         label.text = [athlete pays];
+        
+        label = (UILabel *)[cell viewWithTag:6];
+        label.text = [NSString stringWithFormat:@"%.02f", [athlete pointage]];
     }
     return cell;
 }
