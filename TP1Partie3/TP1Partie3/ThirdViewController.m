@@ -9,6 +9,7 @@
 #import "ThirdViewController.h"
 
 @implementation ThirdViewController
+@synthesize lblMedailles;
 @synthesize lstPositions;
 
 - (void)didReceiveMemoryWarning
@@ -28,6 +29,7 @@
 - (void)viewDidUnload
 {
     [self setLstPositions:nil];
+    [self setLblMedailles:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -42,6 +44,11 @@
 {
     [super viewDidAppear:animated];
     [lstPositions reloadData];
+    
+    if([[Competition laCompetition] getAthleteCourant]==nil){
+        NSString *medailles = @"test";
+        [lblMedailles setText:medailles];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated

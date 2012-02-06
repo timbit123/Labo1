@@ -10,5 +10,6 @@
 #import "Competition.h"
 @interface ThirdViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 - (IBAction)retourClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lblMedailles;
 @property (weak, nonatomic) IBOutlet UITableView *lstPositions;
 @end
